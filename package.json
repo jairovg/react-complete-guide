@@ -10,6 +10,7 @@
     "pre-commit": "lint-staged",
     "prebuild": "rimraf dist",
     "prepare": "husky install",
+    "prettier": "prettier **/*.{mjs,js,jsx,ts,tsx,json,css,scss,html} --write",
     "preview": "vite preview"
   },
   "dependencies": {
