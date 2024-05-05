@@ -23,5 +23,7 @@ module.exports = {
       { allowConstantExport: true },
     ],
     'react/react-in-jsx-scope': 'off',
+    // See: https://sophiabits.com/blog/stop-using-defaultprops
+    'react/require-default-props': 'off'
   },
 };
