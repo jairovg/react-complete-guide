@@ -1,57 +1,41 @@
-import clsx from 'clsx';
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-/* eslint-disable-next-line import/no-absolute-path */
-import viteLogo from '/vite.svg';
-import styles from './App.module.css';
+import ExpensesCmp from './components/Expenses/Expenses';
+import type { Expenses } from './types';
 
-function App() {
-  const [count, setCount] = useState(0);
+function App(): React.JSX.Element {
+  const expenses = [
+    {
+      id: 'e1',
+      title: 'Toilet Paper',
+      amount: 94.12,
+      date: new Date(2020, 7, 14),
+    },
+    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+    {
+      id: 'e3',
+      title: 'Car Insurance',
+      amount: 294.67,
+      date: new Date(2021, 2, 28),
+    },
+    {
+      id: 'e4',
+      title: 'New Desk (Wooden)',
+      amount: 450,
+      date: new Date(2021, 5, 12),
+    },
+  ] as Expenses;
+
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
 
   return (
-    <>
-      <div>
-        <a
-          href="https://vitejs.dev"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={viteLogo}
-            className={clsx(styles.logo)}
-            alt="Vite logo"
-          />
-        </a>
-        <a
-          href="https://react.dev"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img
-            src={reactLogo}
-            className={clsx(styles.logo, styles.react)}
-            alt="React logo"
-          />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className={clsx(styles.card)}>
-        <button
-          type="button"
-          onClick={() => {
-            setCount((current) => current + 1);
-          }}
-        >
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className={clsx(styles['read-the-docs'])}>
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      <h2>Let&rsquo;s get started!</h2>
+      <ExpensesCmp items={expenses} />
+    </div>
   );
 }
 
